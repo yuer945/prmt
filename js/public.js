@@ -123,7 +123,7 @@ $(function(){
 		$(this).find("p").css("display","none");
 	});
 
-//	 点击轮播	
+//	 点击左右轮播	
 	function DY_scroll(wraper,prev,next,img,speed,or)
      {
       var wraper = $(wraper);
@@ -155,6 +155,42 @@ $(function(){
      }
      DY_scroll('.img-scroll','.prev','.next','.img-list',3,true);
 	
+//	点击显示大图
+	$("#product-details .pro-img-scroll a").on("click mouseover",function(){
+		var imgSrc = $(this).find("img").attr("src");
+		$(this).parents(".pro-scroll-wrap").siblings(".pro-img-big").attr("src",imgSrc);
+	});
+	
+//	 点击上下轮播	
+	function TB_scroll(wraper,top,bottom,img,speed,or)
+     {
+      var wraper = $(wraper);
+      var top = $(top);
+      var bottom = $(bottom);
+      var img = $(img).find('ul');
+      var w = img.find('li').outerHeight(true);
+      var s = speed;
+      bottom.click(function()
+           {
+            img.animate({'margin-top':-w},function()
+                      {
+                       img.find('li').eq(0).appendTo(img);
+                       img.css({'margin-top':0});
+                       });
+            });
+      top.click(function()
+           {
+            img.find('li:last').prependTo(img);
+            img.css({'margin-top':-w});
+            img.animate({'margin-top':0});
+            });
+      if (or == true)
+      {
+       ad = setInterval(function() { bottom.click();},s*1000);
+       wraper.hover(function(){clearInterval(ad);},function(){ad = setInterval(function() { bottom.click();},s*1000);});
 
+      }
+     }
+     TB_scroll('.pro-scroll-wrap','.img-top','.img-bottom','.pro-scroll',3,true);
 
 });
