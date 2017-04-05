@@ -208,11 +208,11 @@
     var licontent="<b>朴瑞米特</b><br>";  
         licontent+="<span><strong>地址：</strong>石家庄裕华区东岗路蓝郡名邸A8-103</span><br>";  
         licontent+="<span><strong>电话：</strong>400-632-8166,15373011970</span><br>";  
-        licontent+="<span class=\"input\"><strong></strong><input class=\"outset\" type=\"text\" name=\"origin\" value=\"请输入您的地址\"/><input class=\"outset-but\" type=\"button\" value=\"公交\" onclick=\"gotobaidu(1)\" /><input class=\"outset-but\" type=\"button\" value=\"驾车\"  onclick=\"gotobaidu(2)\"/><a class=\"gotob\" href=\"url=\"http://api.map.baidu.com/direction?destination=latlng:"+marker.getPosition().lat+","+marker.getPosition().lng+"|name:石家庄裕华区东岗路蓝郡名邸"+"®ion=河北"+"&output=html\" target=\"_blank\"></a></span>";
+        licontent+="<span class=\"input\"><strong></strong><input class=\"outset\" type=\"text\" name=\"origin\" value=\"请输入您的地址\"/><input class=\"outset-but\" type=\"button\" value=\"公交\" onclick=\"gotobaidu(1)\" /><input class=\"outset-but\" type=\"button\" value=\"驾车\"  onclick=\"gotobaidu(2)\"/><a class=\"gotob\" href=\"url=\"https://api.map.baidu.com/direction?destination=latlng:"+marker.getPosition().lat+","+marker.getPosition().lng+"|name:石家庄裕华区东岗路蓝郡名邸"+"®ion=河北"+"&output=html\" target=\"_blank\"></a></span>";
  
 	var hiddeninput="<input type=\"hidden\" value=\""+'北京'+"\" name=\"region\" /><input type=\"hidden\" value=\"html\" name=\"output\" /><input type=\"hidden\" value=\"driving\" name=\"mode\" /><input type=\"hidden\" value=\"latlng:"+marker.getPosition().lat+","+marker.getPosition().lng+"|name:蓝郡名邸"+"\" name=\"destination\" />";
  
-    var content1 ="<form id=\"gotobaiduform\" action=\"http://api.map.baidu.com/direction\" target=\"_blank\" method=\"get\">" + licontent +hiddeninput+"</form>";
+    var content1 ="<form id=\"gotobaiduform\" action=\"https://api.map.baidu.com/direction\" target=\"_blank\" method=\"get\">" + licontent +hiddeninput+"</form>";
    
     var opts1 = { width: 300 };  
        
